@@ -42,6 +42,8 @@ public class Helloworld extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//Utilise la fonction lister pour afficher la liste de ma table pays dans ma jsp (acceuil.jsp)
 		request.setAttribute("Lpays", paysDao.lister());
 		this.getServletContext().getRequestDispatcher("/WEB-INF/acceuil.jsp").forward(request, response);
 
@@ -58,6 +60,7 @@ public class Helloworld extends HttpServlet {
 		String nomp = request.getParameter("nomP");
 		
 
+		// Vérification des bouton saisie et utilise la fonction désiré
 		if (request.getParameter("add") != null || request.getParameter("add1") != null) {
 
 			if (nomp != null && nomp != "") {
